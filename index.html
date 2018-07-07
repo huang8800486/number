@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="keywords" content=""> 
+    <meta name="Description" content="">
+    <link href="css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="js/decimal.min.js" type="text/javascript"></script>
+</head>
+<style>
+    input{width:400px;height:45px;line-height:45px;background:#fff;color:#000;border:1px solid #eaeaea;}
+</style>
+<body>
+    <input type="text" id="number" onkeyup="onlyNumber(this)" onblur="onlyNumber(this)"/>
+</body>
+</html>
+<script type="text/javascript">
+
+/*
+* decimal.js加减乘除运算
+* GITHUB:  https://github.com/MikeMcl/decimal.js
+* API:  http://mikemcl.github.io/decimal.js/
+* NPM:  https://www.npmjs.com/package/decimal.js
+*/
+
+// js加法精度
+!(function(){
+    var a = 0.1;
+    var b = 0.2;
+    console.log("直接加法: a + b = ", a + b)
+    console.log("Decimal.js加法: a + b = ", (new Decimal(a).add(new Decimal(b))).toNumber());
+}())
+
+// js减法精度
+!(function(){
+    var a = 1.0;
+    var b = 0.7;
+    console.log("直接加法: a - b = ", a - b)
+    console.log("Decimal.js加法: a - b = ", (new Decimal(a).sub(new Decimal(b))).toNumber());
+}())
+
+// js乘法精度
+!(function(){
+    var a = 1.01;
+    var b = 1.003;
+    console.log("直接加法: a * b = ", a * b)
+    console.log("Decimal.js加法: a * b = ", (new Decimal(a).mul(new Decimal(b))).toNumber());
+}())
+
+// js除法精度
+!(function(){
+    var a = 0.029;
+    var b = 10;
+    console.log("直接加法: a / b = ", a / b)
+    console.log("Decimal.js加法: a / b = ", (new Decimal(a).div(new Decimal(b))).toNumber());
+}())
+
+</script>
